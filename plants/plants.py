@@ -23,6 +23,18 @@ def make_plant(height: int) -> str:
     See the README for examples.
     """
     plant = ""
+    i = 0
+    while i in range (height):
+        k = i + 1
+        if k == 1:
+            plant += " " + FLOWER + "\n"
+        elif k == 2:
+            plant += LEAF + STEM + LEAF + "\n"
+        elif (k-1) % 3 == 0:
+            plant += LEAF + STEM + LEAF + "\n"
+        else:
+            plant += " " + STEM + "\n"
+        i += 1
     return plant
 
 

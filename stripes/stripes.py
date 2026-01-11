@@ -21,7 +21,32 @@ def make_stripes(size: int, horizontal: bool) -> list[list[str]]:
         size: int - Size of square's side.
         horizontal: bool - True if horizontal, False if vertical.
     """
-    # REPLACE THIS COMMENT WITH YOUR CODE
+    
+    i = 0
+    j = 0
+    grid = [["" for j in range (size)] for i in range (size)]
+
+    if horizontal is True:
+        while i in range (size):
+            if i % 2 == 0:
+                for j in range (size):
+                    grid[i][j] = "*"
+            else:
+                for j in range (size):
+                    grid[i][j] = "o"
+            i += 1
+    else:
+        while j in range (size):
+            if j % 2 == 0:
+                for i in range (size):
+                    grid[i][j] = "*"
+            else:
+                for i in range (size):
+                    grid[i][j] = "o"
+            j += 1
+    return grid
+
+    
 
 
 def show_grid(list_of_lists: list[list[str]]) -> None:

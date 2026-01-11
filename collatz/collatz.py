@@ -9,7 +9,11 @@ def next_value(n):
     Output:
         Next number in the Collatz sequence.
     """
-    # REPLACE THIS COMMENT WITH YOUR CODE
+    
+    if n % 2 == 0:
+        return n // 2
+    else:
+        return n * 3 + 1
 
 
 def stopping_time(n, max_iterations):
@@ -43,4 +47,12 @@ def stopping_time(n, max_iterations):
         The number of iterations it took to reach 1.
         Will return max_iterations if 1 was not reached.
     """
-    # REPLACE THIS COMMENT WITH YOUR CODE
+    i = 0
+    while n > 1:
+        n = next_value(n)
+        i += 1
+        if n == 1:
+            break
+        if i == max_iterations:
+            break
+    return i

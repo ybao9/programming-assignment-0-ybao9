@@ -18,6 +18,23 @@ def find_palindromes(words):
     """
     # REPLACE THIS COMMENT WITH YOUR CODE
 
+    new_words = []
+
+    for word in words:
+        i = 0
+        is_palindrome = True
+        while i<= len(word) // 2:
+            if word[i] != word[-(i+1)]:
+                is_palindrome = False
+                break
+            else:
+                i += 1
+        if is_palindrome is True and word not in new_words:
+                new_words.append (word)
+                i = 0
+
+    sorted_new_words = sorted (new_words)
+    return sorted_new_words
 
 def main():
     # sys.argv is a list of arguments on the command line
